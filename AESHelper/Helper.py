@@ -76,31 +76,3 @@ class AesHelper:
         cipher = self._gen()
         text = cipher.decrypt(encrypted)
         return self.unpadding(text)
-
-
-class Parser:
-    def __init__(self, key=None, iv=None):
-        self.key = key or self.aes_key
-        self.iv = iv
-        self.aes = AesHelper(base64.b64decode(self.key), self.iv)
-
-    @property
-    def aes_key(self):
-        return "eqHSs48SCL2VoGsW1lWvDWKQ8Vu71UZJyS7Dbf/e4zo="
-
-    def encrypt(self, text):
-        data = self.aes.encrypt(text)
-        return base64.b64encode(data)
-
-    def decrypt(self, secret):
-        data = base64.b64decode(secret)
-        return self.aes.decrypt(data)
-
-
-if __name__ == '__main__':
-    plain = "server=192.168.1.100;uid=sa;pwd=123;database=mdb"
-    secret = b'qBclQuVaxf8qBmpEiKOfbTbnsb9Yfct0DPDqFoVRIPd1hvg5KgVmp9pfKevjvlrhZR7ovuDlIX03zZnTe5w9oA=='
-
-    parser = Parser()
-    print(parser.encrypt(plain))
-    print(parser.decrypt(secret))
