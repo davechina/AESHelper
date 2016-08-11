@@ -15,7 +15,7 @@ setup(
     packages=find_packages(),
     classifiers=['Programming Language :: Python :: 3.4'],
     keywords="aes",
-    setup_requires=['pycrypto>=2.6.1'],
+    install_requires=['pycrypto>=2.6.1'],
     zip_safe=True,
     include_package_data=True
 )
