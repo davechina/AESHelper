@@ -2,7 +2,7 @@
 AESHelper是一个使用Python 3.4编写的对明文密码进行加解密的小工具。加解密时使用AES/CBC/PKCS5Padding加密填充模式。
 
 ###Installation
-``pip install git+https://github.com/davechina/AESHelper.git``
+``pip install git+https://github.com/liqinshan/AESHelper.git``
 
 ###Example
 
